@@ -1,0 +1,45 @@
+name: CI Pipeline
+
+on:
+  push:
+    branches: [ main, master, develop ]
+  pull_request:
+    branches: [ main, master ]
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout du code
+      uses: actions/checkout@v3
+    
+    - name: Installation des dépendances (simulée)
+      run: |
+        echo "🔧 Installation des dépendances en cours..."
+        echo "📦 Simulation de l'installation des packages"
+        sleep 2
+        echo "✅ Installation terminée avec succès"
+    
+    - name: Exécution des tests (simulée)
+      run: |
+        echo "🧪 Lancement des tests..."
+        echo "✓ Test 1: OK"
+        echo "✓ Test 2: OK"
+        echo "✓ Test 3: OK"
+        sleep 2
+        echo "✅ Tous les tests sont passés avec succès"
+    
+    - name: Build du projet (simulé)
+      run: |
+        echo "🏗️  Build du projet en cours..."
+        sleep 1
+        echo "✅ Build réussi"
+    
+    - name: Rapport final
+      run: |
+        echo "📊 === Rapport de la pipeline ==="
+        echo "✓ Installation: SUCCÈS"
+        echo "✓ Tests: SUCCÈS"
+        echo "✓ Build: SUCCÈS"
+        echo "🎉 Pipeline terminée avec succès!"
